@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sokr AI - Premier League Predictor</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="background-overlay"></div>
+
+		<div id="main-container">
+			<header>
+				<div class="logo">Sokr<span>AI</span></div>
+				<p class="subtitle">
+					Using machine learning to predict the outcomes of future Premier League
+					games.
+				</p>
+			</header>
+
+			<main id="predictor-panel">
+				<div class="matchup-selector">
+					<div class="team-select-wrapper">
+						<label for="home-team">Home Team</label>
+						<select id="home-team" name="home-team">
+							<!-- Options will be populated by JavaScript -->
+						</select>
+					</div>
+
+					<div class="vs-separator">
+						<span>VS</span>
+					</div>
+
+					<div class="team-select-wrapper">
+						<label for="away-team">Away Team</label>
+						<select id="away-team" name="away-team">
+							<!-- Options will be populated by JavaScript -->
+						</select>
+					</div>
+				</div>
+
+				<button id="predict-button">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					>
+						<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+					</svg>
+					<span>Predict Outcome</span>
+				</button>
+
+				<div id="prediction-result" class="hidden">
+					<!-- Prediction result will be injected here -->
+				</div>
+			</main>
+
+			<footer>
+				<p>&copy; 2025 Sokr AI. For entertainment purposes only.</p>
+			</footer>
+		</div>
+
+		<script src="script.js" defer></script>
+	</body>
+</html>
