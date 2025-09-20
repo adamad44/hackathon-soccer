@@ -227,35 +227,142 @@ select:focus {
 	letter-spacing: 1px;
 }
 
-/* --- NEW STYLES for Probability Display --- */
+/* --- AI Prediction Header --- */
+.prediction-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.5rem;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.model-info {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.model-badge {
+	padding: 0.3rem 0.8rem;
+	border-radius: 15px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.model-badge.neural {
+	background: linear-gradient(135deg, #00aaff, #0088cc);
+	color: white;
+}
+
+.model-badge.traditional {
+	background: linear-gradient(135deg, #00ff9f, #00cc7f);
+	color: #0d1117;
+}
+
+.confidence-badge {
+	padding: 0.3rem 0.8rem;
+	border-radius: 15px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.confidence-badge.high {
+	background: linear-gradient(135deg, #00ff9f, #00cc7f);
+	color: #0d1117;
+}
+
+.confidence-badge.medium {
+	background: linear-gradient(135deg, #ffaa00, #cc8800);
+	color: white;
+}
+
+.confidence-badge.low {
+	background: linear-gradient(135deg, #ff6b6b, #cc5555);
+	color: white;
+}
+
+/* --- Enhanced Probability Display --- */
 .probability-container {
 	display: flex;
 	justify-content: space-around;
 	gap: 1rem;
+	margin-bottom: 1rem;
 }
 
 .prob-item {
 	flex: 1;
 	text-align: center;
-	padding: 1rem;
+	padding: 1.5rem 1rem;
 	border-left: 1px solid var(--border-color);
+	border-radius: 8px;
+	transition: all 0.3s ease;
+	position: relative;
 }
+
 .prob-item:first-child {
 	border-left: none;
 }
 
+.prob-item.winner {
+	background: linear-gradient(
+		135deg,
+		rgba(0, 170, 255, 0.1),
+		rgba(0, 170, 255, 0.05)
+	);
+	border: 1px solid var(--primary-color);
+	transform: scale(1.05);
+}
+
+.prob-item.winner::before {
+	content: "🏆";
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	font-size: 1.2rem;
+	background: var(--primary-color);
+	border-radius: 50%;
+	width: 25px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .prob-item .percentage {
-	font-size: 2.5rem;
+	font-size: 2.8rem;
 	font-weight: 700;
 	color: var(--text-color);
 	margin-bottom: 0.5rem;
+	transition: color 0.3s ease;
+}
+
+.prob-item.winner .percentage {
+	color: var(--primary-color);
 }
 
 .prob-item .label {
 	font-size: 0.9rem;
 	color: var(--text-color-dark);
+	font-weight: 500;
 }
-/* --- END NEW STYLES --- */
+
+/* --- Prediction Note --- */
+.prediction-note {
+	text-align: center;
+	padding-top: 1rem;
+	border-top: 1px solid var(--border-color);
+	margin-top: 1rem;
+}
+
+.prediction-note small {
+	color: var(--text-color-dark);
+	font-size: 0.75rem;
+}
 
 /* --- Footer --- */
 footer {
